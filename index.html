@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HitZero — Brand Guide</title>
+<meta name="description" content="Guía de marca oficial de HitZero. Colores, tipografía, logo, tono de voz y pricing.">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --hz-red: #C82020;
+    --hz-red-dark: #900000;
+    --hz-red-light: #E84040;
+    --hz-blue: #0060B0;
+    --hz-blue-dark: #003060;
+    --hz-blue-light: #0078B8;
+    --hz-black: #0A0A0A;
+    --hz-dark: #1A1A2E;
+    --hz-gray-900: #222222;
+    --hz-gray-700: #555555;
+    --hz-gray-500: #888888;
+    --hz-gray-300: #CCCCCC;
+    --hz-gray-100: #F0F0F0;
+    --hz-white: #FFFFFF;
+  }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--hz-white);
+    color: var(--hz-gray-900);
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+  }
+  .nav.visible { transform: translateY(0); }
+  .nav-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    height: 56px;
+    gap: 0.25rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .nav-inner::-webkit-scrollbar { display: none; }
+  .nav-brand {
+    font-weight: 800;
+    font-size: 0.9rem;
+    color: white;
+    margin-right: 1.5rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .nav-brand span { color: var(--hz-red); }
+  .nav a {
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.4rem 0.75rem;
+    border-radius: 6px;
+    transition: all 0.2s;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .nav a:hover { color: white; background: rgba(255,255,255,0.08); }
+  .nav a.active { color: white; background: rgba(200,32,32,0.2); }
+
+  /* COVER */
+  .cover {
+    background: linear-gradient(135deg, var(--hz-black) 0%, var(--hz-blue-dark) 50%, var(--hz-black) 100%);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 50% 50%, rgba(200,32,32,0.08) 0%, transparent 60%);
+  }
+  .cover img {
+    width: 200px;
+    height: 200px;
+    border-radius: 24px;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  .cover h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    position: relative;
+    z-index: 1;
+  }
+  .cover h1 span { color: var(--hz-red); }
+  .cover p {
+    font-size: 1.25rem;
+    color: rgba(255,255,255,0.6);
+    margin-top: 0.5rem;
+    position: relative;
+    z-index: 1;
+  }
+  .cover .version {
+    margin-top: 3rem;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.35);
+    position: relative;
+    z-index: 1;
+  }
+  .cover .scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255,255,255,0.3);
+    font-size: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    animation: bounce 2s infinite;
+  }
+  .cover .scroll-hint svg {
+    width: 20px;
+    height: 20px;
+    stroke: rgba(255,255,255,0.3);
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+
+  /* SECTIONS */
+  .section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+  }
+  .section-full {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .section-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  .section-wide {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    overflow-x: auto;
+  }
+  .section-dark { background: var(--hz-gray-100); }
+  .section-accent { background: var(--hz-black); color: white; }
+  .section h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+  }
+  .section h2 .num {
+    color: var(--hz-red);
+    font-size: 1rem;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.25rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .section-accent h2 .num { color: var(--hz-red); }
+  .section h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 2rem 0 0.75rem;
+  }
+  .section-accent h3 { color: white; }
+  .section p, .section li {
+    font-size: 1rem;
+    color: var(--hz-gray-700);
+    line-height: 1.7;
+  }
+  .section-accent p { color: rgba(255,255,255,0.7); }
+  .divider {
+    width: 60px;
+    height: 4px;
+    background: var(--hz-red);
+    border-radius: 2px;
+    margin: 1rem 0 2rem;
+  }
+
+  /* ANIMATE ON SCROLL */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* COLOR PALETTE */
+  .palette {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+  .color-card {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .color-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  }
+  .color-swatch {
+    height: 100px;
+    display: flex;
+    align-items: flex-end;
+    padding: 0.75rem;
+    position: relative;
+  }
+  .color-swatch span {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: white;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  }
+  .color-info {
+    padding: 0.75rem;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .color-info .name {
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+  .color-info .hex {
+    font-size: 0.8rem;
+    color: var(--hz-gray-500);
+    font-family: 'Courier New', monospace;
+  }
+  .copied-toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--hz-black);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    z-index: 200;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .copied-toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  /* TYPOGRAPHY */
+  .type-sample {
+    margin: 1.5rem 0;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid var(--hz-gray-300);
+  }
+  .type-sample .label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--hz-gray-500);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+  }
+  .type-sample .demo { color: var(--hz-gray-900); }
+
+  /* LOGO RULES */
+  .logo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  .logo-box {
+    border-radius: 12px;
+    padding: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 180px;
+    position: relative;
+    transition: transform 0.2s;
+  }
+  .logo-box:hover { transform: scale(1.02); }
+  .logo-box img {
+    width: 140px;
+    height: 140px;
+    border-radius: 12px;
+  }
+  .logo-box .tag {
+    position: absolute;
+    bottom: 0.75rem;
+    left: 0.75rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .logo-box.dark { background: var(--hz-black); }
+  .logo-box.dark .tag { background: rgba(255,255,255,0.15); color: white; }
+  .logo-box.light { background: var(--hz-gray-100); border: 1px solid var(--hz-gray-300); }
+  .logo-box.light .tag { background: rgba(0,0,0,0.08); color: var(--hz-gray-700); }
+  .logo-box.blue { background: var(--hz-blue-dark); }
+  .logo-box.blue .tag { background: rgba(255,255,255,0.15); color: white; }
+  .logo-box.red { background: var(--hz-red); }
+  .logo-box.red .tag { background: rgba(255,255,255,0.2); color: white; }
+
+  /* VOICE TABLE */
+  .voice-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+  }
+  .voice-table th, .voice-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--hz-gray-300);
+    font-size: 0.95rem;
+  }
+  .voice-table th {
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--hz-gray-500);
+  }
+  .section-accent .voice-table th { color: rgba(255,255,255,0.5); }
+  .section-accent .voice-table td { color: rgba(255,255,255,0.8); }
+  .section-accent .voice-table td:first-child { color: white; }
+  .section-accent .voice-table td,
+  .section-accent .voice-table th { border-bottom-color: rgba(255,255,255,0.1); }
+  .do { color: #16a34a; font-weight: 600; }
+  .dont { color: var(--hz-red); font-weight: 600; }
+
+  /* PRICING */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+  .price-card {
+    border-radius: 12px;
+    padding: 1.5rem;
+    background: var(--hz-gray-900);
+    border: 2px solid var(--hz-gray-700);
+    text-align: center;
+    color: white;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .price-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  }
+  .price-card.recommended {
+    border-color: var(--hz-red);
+    position: relative;
+  }
+  .price-card.recommended::before {
+    content: 'RECOMENDADO';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--hz-red);
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 0.2rem 0.75rem;
+    border-radius: 10px;
+    letter-spacing: 0.05em;
+  }
+  .price-card .plan-name {
+    font-weight: 800;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .price-card .price {
+    font-size: 1.75rem;
+    font-weight: 900;
+  }
+  .price-card .price small {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--hz-gray-500);
+  }
+  .price-card .details {
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.5;
+  }
+  .price-card .fit {
+    margin-top: 0.75rem;
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    display: inline-block;
+  }
+  .fit-good { background: #dcfce7; color: #16a34a; font-weight: 600; }
+
+  /* COMPARISON TABLE */
+  .comparison {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+  }
+  .comparison th, .comparison td {
+    padding: 0.75rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .comparison th {
+    font-weight: 700;
+    background: rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.7);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .comparison td { color: rgba(255,255,255,0.8); }
+  .comparison td:first-child { text-align: left; font-weight: 600; color: white; }
+  .highlight-cell { background: rgba(22,163,74,0.15); color: #4ade80 !important; font-weight: 700; }
+  .warning-cell { background: rgba(220,38,38,0.15); color: #fca5a5 !important; }
+
+  /* CALLOUT */
+  .callout {
+    background: rgba(200,32,32,0.06);
+    border-left: 4px solid var(--hz-red);
+    padding: 1.25rem 1.5rem;
+    border-radius: 0 8px 8px 0;
+    margin: 1.5rem 0;
+  }
+  .callout strong { color: var(--hz-red); }
+  .callout p { margin: 0; }
+  .section-accent .callout { background: rgba(200,32,32,0.1); }
+
+  .callout-blue {
+    background: rgba(0,96,176,0.06);
+    border-left: 4px solid var(--hz-blue);
+    padding: 1.25rem 1.5rem;
+    border-radius: 0 8px 8px 0;
+    margin: 1.5rem 0;
+  }
+  .callout-blue strong { color: var(--hz-blue); }
+  .section-accent .callout-blue { background: rgba(0,96,176,0.15); }
+
+  /* PRICING CALCULATOR */
+  .calculator {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2rem 0;
+    text-align: center;
+  }
+  .calculator label {
+    display: block;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 0.75rem;
+  }
+  .calculator input[type="range"] {
+    width: 100%;
+    max-width: 400px;
+    margin: 0.5rem 0;
+    accent-color: var(--hz-red);
+    cursor: pointer;
+  }
+  .calculator .athlete-count {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: white;
+    margin: 0.5rem 0;
+  }
+  .calculator .athlete-count small {
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.5);
+  }
+  .calculator .recommendation {
+    margin-top: 1rem;
+    padding: 1rem 1.5rem;
+    background: rgba(200,32,32,0.15);
+    border-radius: 10px;
+    display: inline-block;
+  }
+  .calculator .recommendation .plan-label {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .calculator .recommendation .plan-result {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: white;
+    margin-top: 0.25rem;
+  }
+  .calculator .recommendation .plan-price {
+    font-size: 0.9rem;
+    color: var(--hz-red-light);
+    font-weight: 600;
+  }
+
+  /* FOOTER */
+  .footer {
+    background: var(--hz-black);
+    color: rgba(255,255,255,0.3);
+    text-align: center;
+    padding: 3rem 2rem;
+    font-size: 0.85rem;
+  }
+  .footer img {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    opacity: 0.6;
+  }
+
+  @media (max-width: 640px) {
+    .cover h1 { font-size: 2.5rem; }
+    .cover img { width: 140px; height: 140px; }
+    .section { padding: 3rem 1.25rem; }
+    .section-inner { padding: 0 1.25rem; }
+    .logo-grid { grid-template-columns: 1fr; }
+    .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+    .nav-inner { padding: 0 1rem; }
+  }
+
+  @media print {
+    .nav { display: none; }
+    .cover { min-height: auto; padding: 3rem 2rem; }
+    .section { padding: 2rem; }
+    .color-swatch { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .fade-in { opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <div class="nav-brand">Hit<span>Zero</span></div>
+    <a href="#identidad">Identidad</a>
+    <a href="#logo">Logo</a>
+    <a href="#colores">Colores</a>
+    <a href="#tipografia">Tipografía</a>
+    <a href="#voz">Tono de Voz</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#aplicaciones">Aplicaciones</a>
+  </div>
+</nav>
+
+<!-- TOAST -->
+<div class="copied-toast" id="toast"></div>
+
+<!-- COVER -->
+<div class="cover">
+  <img src="https://avatars.githubusercontent.com/u/252136948?s=400&u=1cd20729652a93936385e6544bc3829b6c188515&v=4" alt="HitZero Logo">
+  <h1>Hit<span>Zero</span></h1>
+  <p>Brand Guide</p>
+  <div class="version">Marzo 2026 · v1.0 · El Dezvare</div>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 5v14M5 12l7 7 7-7"/>
+    </svg>
+  </div>
+</div>
+
+<!-- 01. IDENTITY -->
+<div class="section fade-in" id="identidad">
+  <h2><span class="num">01 — Identidad</span>Quiénes Somos</h2>
+  <div class="divider"></div>
+  <p>HitZero es una plataforma SaaS multi-tenant para clubes y academias deportivas en Colombia y LATAM. Reemplazamos Excel, WhatsApp y papel con una sola herramienta que permite gestionar atletas, cobrar mensualidades, trackear progreso deportivo y mantener a los padres informados.</p>
+
+  <h3>Misión</h3>
+  <p>Empoderar a clubes y academias deportivas en Colombia y LATAM con tecnología accesible que digitalice su operación, fortalezca la relación con atletas y familias, y les permita enfocarse en lo que mejor hacen: formar deportistas.</p>
+
+  <h3>Visión</h3>
+  <p>Ser la plataforma líder de gestión deportiva en Latinoamérica, convirtiendo a hitzero.club en el directorio deportivo de referencia.</p>
+
+  <h3>Tagline</h3>
+  <p style="font-size: 1.5rem; font-weight: 800; color: var(--hz-gray-900); margin-top: 0.5rem;">"Deja de usar Excel y WhatsApp para gestionar tu academia"</p>
+</div>
+
+<!-- 02. LOGO -->
+<div class="section section-dark fade-in" id="logo">
+  <h2><span class="num">02 — Logo</span>Uso del Logo</h2>
+  <div class="divider"></div>
+  <p>El logo de HitZero combina un escudo deportivo con una silueta de atleta (cheerleader), estrellas y los colores rojo/azul/blanco. Transmite energía, deporte y competencia.</p>
+
+  <div class="logo-grid">
+    <div class="logo-box dark">
+      <img src="https://avatars.githubusercontent.com/u/252136948?s=400&u=1cd20729652a93936385e6544bc3829b6c188515&v=4" alt="Logo on dark">
+      <span class="tag">Fondo oscuro (principal)</span>
+    </div>
+    <div class="logo-box light">
+      <img src="https://avatars.githubusercontent.com/u/252136948?s=400&u=1cd20729652a93936385e6544bc3829b6c188515&v=4" alt="Logo on light">
+      <span class="tag">Fondo claro</span>
+    </div>
+    <div class="logo-box blue">
+      <img src="https://avatars.githubusercontent.com/u/252136948?s=400&u=1cd20729652a93936385e6544bc3829b6c188515&v=4" alt="Logo on blue">
+      <span class="tag">Fondo azul marca</span>
+    </div>
+    <div class="logo-box red">
+      <img src="https://avatars.githubusercontent.com/u/252136948?s=400&u=1cd20729652a93936385e6544bc3829b6c188515&v=4" alt="Logo on red">
+      <span class="tag">Fondo rojo marca</span>
+    </div>
+  </div>
+
+  <h3>Reglas de uso</h3>
+  <table class="voice-table">
+    <tr><th style="width:35%">Regla</th><th>Detalle</th></tr>
+    <tr><td>Nombre</td><td><strong>"HitZero"</strong> — capital H, capital Z, junto. Nunca "Hit Zero", "hitzero", "HITZERO", o "hit zero".</td></tr>
+    <tr><td>Espacio mínimo</td><td>Mantener al menos el 25% del ancho del logo como espacio libre alrededor.</td></tr>
+    <tr><td>Tamaño mínimo</td><td>40px de ancho para digital, 15mm para impreso.</td></tr>
+    <tr><td>Fondo preferido</td><td>Oscuro (negro o azul oscuro). El logo fue diseñado para fondos oscuros.</td></tr>
+    <tr><td>No distorsionar</td><td>No rotar, estirar, recortar ni aplicar efectos al logo.</td></tr>
+  </table>
+</div>
+
+<!-- 03. COLORS -->
+<div class="section fade-in" id="colores">
+  <h2><span class="num">03 — Colores</span>Paleta de Marca</h2>
+  <div class="divider"></div>
+  <p>Los colores se extrajeron directamente del logo oficial. El rojo transmite energía y pasión deportiva. El azul transmite confianza y tecnología. El negro es el fondo principal de la marca. <strong>Hacé click en cualquier color para copiar el hex.</strong></p>
+
+  <h3>Colores primarios</h3>
+  <div class="palette">
+    <div class="color-card" data-color="#C82020">
+      <div class="color-swatch" style="background: #C82020;"><span>Primary</span></div>
+      <div class="color-info"><div class="name">HZ Red</div><div class="hex">#C82020</div></div>
+    </div>
+    <div class="color-card" data-color="#0060B0">
+      <div class="color-swatch" style="background: #0060B0;"><span>Primary</span></div>
+      <div class="color-info"><div class="name">HZ Blue</div><div class="hex">#0060B0</div></div>
+    </div>
+    <div class="color-card" data-color="#0A0A0A">
+      <div class="color-swatch" style="background: #0A0A0A;"><span>Primary</span></div>
+      <div class="color-info"><div class="name">HZ Black</div><div class="hex">#0A0A0A</div></div>
+    </div>
+    <div class="color-card" data-color="#FFFFFF">
+      <div class="color-swatch" style="background: #FFFFFF; border: 1px solid #ddd;"><span style="color: #888; text-shadow: none;">Primary</span></div>
+      <div class="color-info"><div class="name">HZ White</div><div class="hex">#FFFFFF</div></div>
+    </div>
+  </div>
+
+  <h3>Variantes</h3>
+  <div class="palette">
+    <div class="color-card" data-color="#900000">
+      <div class="color-swatch" style="background: #900000;"><span>Dark</span></div>
+      <div class="color-info"><div class="name">Red Dark</div><div class="hex">#900000</div></div>
+    </div>
+    <div class="color-card" data-color="#E84040">
+      <div class="color-swatch" style="background: #E84040;"><span>Light</span></div>
+      <div class="color-info"><div class="name">Red Light</div><div class="hex">#E84040</div></div>
+    </div>
+    <div class="color-card" data-color="#003060">
+      <div class="color-swatch" style="background: #003060;"><span>Dark</span></div>
+      <div class="color-info"><div class="name">Blue Dark</div><div class="hex">#003060</div></div>
+    </div>
+    <div class="color-card" data-color="#0078B8">
+      <div class="color-swatch" style="background: #0078B8;"><span>Light</span></div>
+      <div class="color-info"><div class="name">Blue Light</div><div class="hex">#0078B8</div></div>
+    </div>
+  </div>
+
+  <h3>Neutros</h3>
+  <div class="palette">
+    <div class="color-card" data-color="#222222">
+      <div class="color-swatch" style="background: #222222;"><span>900</span></div>
+      <div class="color-info"><div class="name">Gray 900</div><div class="hex">#222222</div></div>
+    </div>
+    <div class="color-card" data-color="#555555">
+      <div class="color-swatch" style="background: #555555;"><span>700</span></div>
+      <div class="color-info"><div class="name">Gray 700</div><div class="hex">#555555</div></div>
+    </div>
+    <div class="color-card" data-color="#888888">
+      <div class="color-swatch" style="background: #888888;"><span>500</span></div>
+      <div class="color-info"><div class="name">Gray 500</div><div class="hex">#888888</div></div>
+    </div>
+    <div class="color-card" data-color="#CCCCCC">
+      <div class="color-swatch" style="background: #CCCCCC;"><span style="color: #555; text-shadow: none;">300</span></div>
+      <div class="color-info"><div class="name">Gray 300</div><div class="hex">#CCCCCC</div></div>
+    </div>
+    <div class="color-card" data-color="#F0F0F0">
+      <div class="color-swatch" style="background: #F0F0F0; border: 1px solid #ddd;"><span style="color: #888; text-shadow: none;">100</span></div>
+      <div class="color-info"><div class="name">Gray 100</div><div class="hex">#F0F0F0</div></div>
+    </div>
+  </div>
+
+  <h3>Uso de colores</h3>
+  <table class="voice-table">
+    <tr><th>Color</th><th>Cuándo usarlo</th></tr>
+    <tr><td><span style="color: var(--hz-red);">HZ Red</span></td><td>CTAs principales, alertas, highlights, acentos. El color de "acción".</td></tr>
+    <tr><td><span style="color: var(--hz-blue);">HZ Blue</span></td><td>Links, información, estados activos, backgrounds secundarios. El color de "confianza".</td></tr>
+    <tr><td><span style="color: var(--hz-black);">HZ Black</span></td><td>Fondos principales, headers, texto primario. El color "base".</td></tr>
+    <tr><td><span style="color: var(--hz-gray-500);">Grays</span></td><td>Texto secundario, bordes, fondos sutiles, UI elements.</td></tr>
+  </table>
+</div>
+
+<!-- 04. TYPOGRAPHY -->
+<div class="section section-dark fade-in" id="tipografia">
+  <h2><span class="num">04 — Tipografía</span>Inter</h2>
+  <div class="divider"></div>
+  <p>Inter es la tipografía principal de HitZero. Diseñada para pantallas, con excelente legibilidad en todos los tamaños. Se usa en la landing page (Astro) y en la plataforma (TanStack Start + Tailwind).</p>
+
+  <div class="type-sample">
+    <div class="label">Display — Inter 900 / 3rem</div>
+    <div class="demo" style="font-size: 3rem; font-weight: 900; letter-spacing: -0.02em;">Gestiona tu academia</div>
+  </div>
+  <div class="type-sample">
+    <div class="label">Heading 1 — Inter 800 / 2rem</div>
+    <div class="demo" style="font-size: 2rem; font-weight: 800;">Seguimiento de progreso</div>
+  </div>
+  <div class="type-sample">
+    <div class="label">Heading 2 — Inter 700 / 1.5rem</div>
+    <div class="demo" style="font-size: 1.5rem; font-weight: 700;">Cobros automáticos con Wompi</div>
+  </div>
+  <div class="type-sample">
+    <div class="label">Heading 3 — Inter 600 / 1.25rem</div>
+    <div class="demo" style="font-size: 1.25rem; font-weight: 600;">Roles y permisos por organización</div>
+  </div>
+  <div class="type-sample">
+    <div class="label">Body — Inter 400 / 1rem</div>
+    <div class="demo" style="font-size: 1rem; font-weight: 400;">HitZero es la plataforma que permite a clubes y academias deportivas gestionar atletas, clases, pagos y progreso desde un solo lugar. Sin instalar nada, desde cualquier dispositivo.</div>
+  </div>
+  <div class="type-sample">
+    <div class="label">Small / Caption — Inter 500 / 0.875rem</div>
+    <div class="demo" style="font-size: 0.875rem; font-weight: 500; color: var(--hz-gray-500);">Planes desde COP $0/mes · Prueba gratis · Sin tarjeta de crédito</div>
+  </div>
+
+  <h3>Escala tipográfica (Tailwind)</h3>
+  <table class="voice-table">
+    <tr><th>Nivel</th><th>Clase Tailwind</th><th>Peso</th></tr>
+    <tr><td>Display</td><td>text-5xl / text-4xl</td><td>font-black (900)</td></tr>
+    <tr><td>H1</td><td>text-3xl</td><td>font-extrabold (800)</td></tr>
+    <tr><td>H2</td><td>text-2xl</td><td>font-bold (700)</td></tr>
+    <tr><td>H3</td><td>text-xl</td><td>font-semibold (600)</td></tr>
+    <tr><td>Body</td><td>text-base</td><td>font-normal (400)</td></tr>
+    <tr><td>Small</td><td>text-sm</td><td>font-medium (500)</td></tr>
+    <tr><td>Caption</td><td>text-xs</td><td>font-medium (500)</td></tr>
+  </table>
+</div>
+
+<!-- 05. VOICE -->
+<div class="section fade-in" id="voz">
+  <h2><span class="num">05 — Tono de Voz</span>Cómo Hablamos</h2>
+  <div class="divider"></div>
+  <p>HitZero habla como un coach que entiende de tecnología — directo, cercano, profesional pero no corporativo. Nunca como un vendedor de software empresarial.</p>
+
+  <h3>Principios de voz</h3>
+  <table class="voice-table">
+    <tr><th>Principio</th><th>Significado</th></tr>
+    <tr><td><strong>Directo</strong></td><td>Ir al grano. Sin relleno corporativo. "Cobra mensualidades sin Excel" en vez de "Optimice sus procesos de facturación recurrente".</td></tr>
+    <tr><td><strong>Cercano</strong></td><td>Hablar de tú/vos, no de usted. Entendemos que manejas una academia, no una "empresa". Somos colegas, no proveedores.</td></tr>
+    <tr><td><strong>Deportivo</strong></td><td>Usar lenguaje de deporte. "Atletas" no "clientes". "Entrenadores" no "instructores". "Academias" no "establecimientos".</td></tr>
+    <tr><td><strong>Local</strong></td><td>Precios en COP. Métodos de pago colombianos. Referencias locales. No somos un SaaS gringo traducido.</td></tr>
+  </table>
+
+  <h3>Do's & Don'ts</h3>
+  <table class="voice-table">
+    <tr><th class="do">Sí</th><th class="dont">No</th></tr>
+    <tr><td>"Gestiona tu academia desde el celular"</td><td>"Nuestra solución enterprise-grade le permite administrar su establecimiento deportivo"</td></tr>
+    <tr><td>"Cobra con Nequi, PSE o tarjeta"</td><td>"Integración con múltiples pasarelas de pago"</td></tr>
+    <tr><td>"Los papás ven el progreso de sus hijos"</td><td>"Los stakeholders tienen visibilidad del performance de los usuarios"</td></tr>
+    <tr><td>"Pruébalo gratis, sin tarjeta"</td><td>"Solicite una demo con nuestro equipo de ventas"</td></tr>
+    <tr><td>"¿Tienes un club? Esto es para ti"</td><td>"Dirigido a organizaciones deportivas de mediana y gran escala"</td></tr>
+  </table>
+</div>
+
+<!-- 06. PRICING -->
+<div class="section section-accent section-full fade-in" id="pricing">
+  <div class="section-inner">
+    <h2><span class="num">06 — Pricing</span>Análisis de Precios</h2>
+    <div class="divider"></div>
+    <p>Existen 3 modelos de precios en diferentes fuentes. Analizamos cuál es el más viable basado en el estudio de mercado.</p>
+  </div>
+
+  <div class="section-wide">
+    <h3 style="color: white; margin-bottom: 1rem;">Comparativa de los 3 modelos</h3>
+    <table class="comparison" style="background: rgba(255,255,255,0.05); border-radius: 12px; overflow: hidden;">
+      <tr>
+        <th>Plan</th>
+        <th>Landing (actual)</th>
+        <th>Código v2</th>
+        <th>Estudio de Mercado</th>
+        <th>Presupuesto SW academia (1-2% ingresos)</th>
+      </tr>
+      <tr>
+        <td>Free</td>
+        <td>—</td>
+        <td>$0 (10 atl)</td>
+        <td>—</td>
+        <td style="font-size: 0.85rem;">—</td>
+      </tr>
+      <tr>
+        <td>Basic / Starter</td>
+        <td>$40.000</td>
+        <td>$49.900</td>
+        <td>$29.900</td>
+        <td style="font-size: 0.85rem;">Pequeña (20-30 atl): $24K-48K</td>
+      </tr>
+      <tr>
+        <td>Pro / Professional</td>
+        <td class="highlight-cell">$78.000</td>
+        <td class="warning-cell">$149.900</td>
+        <td>$79.900</td>
+        <td style="font-size: 0.85rem;">Mediana (50-80 atl): $60K-120K</td>
+      </tr>
+      <tr>
+        <td>Enterprise</td>
+        <td>Custom</td>
+        <td>Custom</td>
+        <td>$199.900</td>
+        <td style="font-size: 0.85rem;">Grande (100+ atl): $150K-300K</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="section-inner">
+    <div class="callout">
+      <p><strong>Problema clave:</strong> El Pro del código v2 ($149.900) excede por mucho el presupuesto de una academia mediana ($60K-120K). A ese precio, solo las grandes podrían pagarlo — pero ellas necesitan Enterprise. Hay un "agujero" en el pricing del v2.</p>
+    </div>
+
+    <h3 style="color: white; margin-top: 2rem;">Recomendación</h3>
+    <p>Basado en el estudio de mercado, la capacidad de pago real de las academias, y la estrategia de penetración con 1 founder:</p>
+  </div>
+
+  <div style="max-width: 1000px; margin: 2rem auto; padding: 0 2rem;">
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="plan-name">Free</div>
+        <div class="price">$0<small>/mes</small></div>
+        <div class="details">10 atletas · 1 trainer<br>100 MB storage</div>
+        <div class="fit fit-good">Gancho de adopción</div>
+      </div>
+      <div class="price-card">
+        <div class="plan-name">Basic</div>
+        <div class="price">$39.900<small>/mes</small></div>
+        <div class="details">50 atletas · 3 trainers<br>1 GB storage</div>
+        <div class="fit fit-good">Dentro del budget ($24K-48K)</div>
+      </div>
+      <div class="price-card recommended">
+        <div class="plan-name">Pro</div>
+        <div class="price">$79.900<small>/mes</small></div>
+        <div class="details">200 atletas · 10 trainers<br>10 GB storage</div>
+        <div class="fit fit-good">Dentro del budget ($60K-120K)</div>
+      </div>
+      <div class="price-card">
+        <div class="plan-name">Enterprise</div>
+        <div class="price">$199.900<small>/mes</small></div>
+        <div class="details">Ilimitado · Custom domain<br>50 GB+ · Alegra · Soporte priority</div>
+        <div class="fit fit-good">Dentro del budget ($150K-300K)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-inner">
+    <!-- PRICING CALCULATOR -->
+    <div class="calculator">
+      <label>¿Cuántos atletas tiene tu academia?</label>
+      <input type="range" id="athleteSlider" min="1" max="300" value="30">
+      <div class="athlete-count"><span id="athleteCount">30</span> <small>atletas</small></div>
+      <div class="recommendation">
+        <div class="plan-label">Plan recomendado</div>
+        <div class="plan-result" id="recommendedPlan">Basic</div>
+        <div class="plan-price" id="recommendedPrice">$39.900/mes</div>
+      </div>
+    </div>
+
+    <h3 style="color: white; margin-top: 1.5rem;">¿Por qué estos precios?</h3>
+    <table class="voice-table">
+      <tr><th>Decisión</th><th>Razón</th></tr>
+      <tr>
+        <td>Free a $0</td>
+        <td>Barrera de entrada cero. El club prueba sin riesgo. Convierte a Basic cuando necesita más de 10 atletas. Esencial para 1 founder sin equipo de ventas.</td>
+      </tr>
+      <tr>
+        <td>Basic a $39.900 (no $49.900)</td>
+        <td>$49.900 excede el presupuesto de una academia pequeña ($24K-48K). $39.900 cabe justo. Psicológicamente "menos de 40 mil" es mejor que "casi 50 mil".</td>
+      </tr>
+      <tr>
+        <td>Pro a $79.900 (no $149.900)</td>
+        <td>$149.900 excede el budget de medianas ($60K-120K). $79.900 cabe cómodo. Coincide con el estudio de mercado. La landing ya cobra ~$78K — validación implícita.</td>
+      </tr>
+      <tr>
+        <td>Enterprise a $199.900 (no Custom)</td>
+        <td>Precio fijo transparente en vez de "contáctanos". Las grandes (budget $150K-300K) pueden decidir sin call de ventas. Custom solo para white-label.</td>
+      </tr>
+    </table>
+
+    <h3 style="color: white; margin-top: 2rem;">Impacto en Unit Economics</h3>
+    <table class="comparison" style="background: rgba(255,255,255,0.05); border-radius: 12px;">
+      <tr>
+        <th>Métrica</th>
+        <th>Antes (estudio mercado)</th>
+        <th>Con precios recomendados</th>
+      </tr>
+      <tr>
+        <td>ARPU blended</td>
+        <td>COP 89.933</td>
+        <td>COP ~73.920*</td>
+      </tr>
+      <tr>
+        <td>Break-even</td>
+        <td>~34 clientes</td>
+        <td>~41 clientes</td>
+      </tr>
+      <tr>
+        <td>Timeline break-even</td>
+        <td>~12-14 meses</td>
+        <td>~14-17 meses</td>
+      </tr>
+      <tr>
+        <td>LTV/CAC</td>
+        <td>221:1</td>
+        <td>~181:1 (sigue excelente)</td>
+      </tr>
+    </table>
+    <p style="font-size: 0.8rem; margin-top: 0.5rem; color: rgba(255,255,255,0.4);">*ARPU con mix: 15% Free ($0) + 40% Basic ($39.9K) + 35% Pro ($79.9K) + 10% Enterprise ($199.9K) = $73.920</p>
+
+    <div class="callout-blue" style="margin-top: 1.5rem;">
+      <p><strong>Trade-off aceptable:</strong> Break-even sube de ~34 a ~41 clientes (+7), pero la tasa de conversión será mayor porque los precios caben en el presupuesto real de las academias. Es mejor convertir 41 clientes a precios viables que perder deals por tener Pro a $149.9K.</p>
+    </div>
+  </div>
+</div>
+
+<!-- 07. APPLICATIONS -->
+<div class="section fade-in" id="aplicaciones">
+  <h2><span class="num">07 — Aplicaciones</span>Variables CSS & Tailwind</h2>
+  <div class="divider"></div>
+  <p>Para implementar la paleta en la plataforma y landing:</p>
+
+  <div class="type-sample">
+    <div class="label">CSS Custom Properties (tailwind.config)</div>
+<pre class="demo" style="font-family: 'Courier New', monospace; font-size: 0.85rem; line-height: 1.8; white-space: pre-wrap;">// colors
+hz: {
+  red:      { DEFAULT: '#C82020', dark: '#900000', light: '#E84040' },
+  blue:     { DEFAULT: '#0060B0', dark: '#003060', light: '#0078B8' },
+  black:    '#0A0A0A',
+  white:    '#FFFFFF',
+  gray:     {
+    100: '#F0F0F0', 300: '#CCCCCC', 500: '#888888',
+    700: '#555555', 900: '#222222'
+  }
+}
+
+// fontFamily
+sans: ['Inter', ...defaultTheme.fontFamily.sans]</pre>
+  </div>
+
+  <div class="type-sample">
+    <div class="label">CSS Variables</div>
+<pre class="demo" style="font-family: 'Courier New', monospace; font-size: 0.85rem; line-height: 1.8; white-space: pre-wrap;">:root {
+  --hz-red: #C82020;
+  --hz-red-dark: #900000;
+  --hz-red-light: #E84040;
+  --hz-blue: #0060B0;
+  --hz-blue-dark: #003060;
+  --hz-blue-light: #0078B8;
+  --hz-black: #0A0A0A;
+  --hz-white: #FFFFFF;
+}</pre>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <img src="https://avatars.githubusercontent.com/u/252136948?s=400&u=1cd20729652a93936385e6544bc3829b6c188515&v=4" alt="HitZero">
+  <p>HitZero Brand Guide v1.0 · Marzo 2026 · El Dezvare</p>
+  <p style="margin-top: 0.25rem;">hitzero.club</p>
+</div>
+
+<script>
+  // === NAV: show after scrolling past cover ===
+  const nav = document.getElementById('nav');
+  const cover = document.querySelector('.cover');
+
+  const navObserver = new IntersectionObserver(([entry]) => {
+    nav.classList.toggle('visible', !entry.isIntersecting);
+  }, { threshold: 0.1 });
+  navObserver.observe(cover);
+
+  // === SCROLL SPY ===
+  const sections = document.querySelectorAll('.section[id]');
+  const navLinks = document.querySelectorAll('.nav a');
+
+  const spyObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-30% 0px -70% 0px' });
+  sections.forEach(s => spyObserver.observe(s));
+
+  // === SMOOTH SCROLL ===
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  // === FADE IN ON SCROLL ===
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        fadeObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
+
+  // === COPY COLOR TO CLIPBOARD ===
+  const toast = document.getElementById('toast');
+  let toastTimeout;
+
+  document.querySelectorAll('.color-card[data-color]').forEach(card => {
+    card.addEventListener('click', () => {
+      const color = card.dataset.color;
+      navigator.clipboard.writeText(color).then(() => {
+        toast.textContent = `${color} copiado`;
+        toast.classList.add('show');
+        clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(() => toast.classList.remove('show'), 1500);
+      });
+    });
+  });
+
+  // === PRICING CALCULATOR ===
+  const slider = document.getElementById('athleteSlider');
+  const countEl = document.getElementById('athleteCount');
+  const planEl = document.getElementById('recommendedPlan');
+  const priceEl = document.getElementById('recommendedPrice');
+
+  const plans = [
+    { max: 10, name: 'Free', price: '$0/mes' },
+    { max: 50, name: 'Basic', price: '$39.900/mes' },
+    { max: 200, name: 'Pro', price: '$79.900/mes' },
+    { max: Infinity, name: 'Enterprise', price: '$199.900/mes' },
+  ];
+
+  slider.addEventListener('input', () => {
+    const val = parseInt(slider.value);
+    countEl.textContent = val;
+    const plan = plans.find(p => val <= p.max);
+    planEl.textContent = plan.name;
+    priceEl.textContent = plan.price;
+  });
+</script>
+
+</body>
+</html>
