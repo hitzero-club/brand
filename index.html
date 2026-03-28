@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HitZero — Brand Guide</title>
-<meta name="description" content="Guía de marca oficial de HitZero. Colores, tipografía, logo, tono de voz y pricing.">
+<meta name="description" content="Guía de marca oficial de HitZero. Colores, tipografía, logo, tono de voz y aplicaciones.">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
@@ -164,24 +164,7 @@
     margin: 0 auto;
     padding: 5rem 2rem;
   }
-  .section-full {
-    max-width: 100%;
-    padding-left: 0;
-    padding-right: 0;
-  }
-  .section-inner {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
-  .section-wide {
-    max-width: 1100px;
-    margin: 2rem auto;
-    padding: 0 2rem;
-    overflow-x: auto;
-  }
   .section-dark { background: var(--hz-gray-100); }
-  .section-accent { background: var(--hz-black); color: white; }
   .section h2 {
     font-size: 2rem;
     font-weight: 800;
@@ -197,19 +180,18 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
   }
-  .section-accent h2 .num { color: var(--hz-red); }
+
   .section h3 {
     font-size: 1.25rem;
     font-weight: 700;
     margin: 2rem 0 0.75rem;
   }
-  .section-accent h3 { color: white; }
+
   .section p, .section li {
     font-size: 1rem;
     color: var(--hz-gray-700);
     line-height: 1.7;
   }
-  .section-accent p { color: rgba(255,255,255,0.7); }
   .divider {
     width: 60px;
     height: 4px;
@@ -378,185 +360,8 @@
     letter-spacing: 0.05em;
     color: var(--hz-gray-500);
   }
-  .section-accent .voice-table th { color: rgba(255,255,255,0.5); }
-  .section-accent .voice-table td { color: rgba(255,255,255,0.8); }
-  .section-accent .voice-table td:first-child { color: white; }
-  .section-accent .voice-table td,
-  .section-accent .voice-table th { border-bottom-color: rgba(255,255,255,0.1); }
   .do { color: #16a34a; font-weight: 600; }
   .dont { color: var(--hz-red); font-weight: 600; }
-
-  /* PRICING */
-  .pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1rem;
-    margin: 2rem 0;
-  }
-  .price-card {
-    border-radius: 12px;
-    padding: 1.5rem;
-    background: var(--hz-gray-900);
-    border: 2px solid var(--hz-gray-700);
-    text-align: center;
-    color: white;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .price-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
-  }
-  .price-card.recommended {
-    border-color: var(--hz-red);
-    position: relative;
-  }
-  .price-card.recommended::before {
-    content: 'RECOMENDADO';
-    position: absolute;
-    top: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--hz-red);
-    color: white;
-    font-size: 0.65rem;
-    font-weight: 700;
-    padding: 0.2rem 0.75rem;
-    border-radius: 10px;
-    letter-spacing: 0.05em;
-  }
-  .price-card .plan-name {
-    font-weight: 800;
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-  }
-  .price-card .price {
-    font-size: 1.75rem;
-    font-weight: 900;
-  }
-  .price-card .price small {
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: var(--hz-gray-500);
-  }
-  .price-card .details {
-    margin-top: 0.75rem;
-    font-size: 0.85rem;
-    color: rgba(255,255,255,0.6);
-    line-height: 1.5;
-  }
-  .price-card .fit {
-    margin-top: 0.75rem;
-    font-size: 0.75rem;
-    padding: 0.3rem 0.6rem;
-    border-radius: 6px;
-    display: inline-block;
-  }
-  .fit-good { background: #dcfce7; color: #16a34a; font-weight: 600; }
-
-  /* COMPARISON TABLE */
-  .comparison {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1.5rem 0;
-    font-size: 0.9rem;
-  }
-  .comparison th, .comparison td {
-    padding: 0.75rem;
-    text-align: center;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-  }
-  .comparison th {
-    font-weight: 700;
-    background: rgba(255,255,255,0.1);
-    color: rgba(255,255,255,0.7);
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-  }
-  .comparison td { color: rgba(255,255,255,0.8); }
-  .comparison td:first-child { text-align: left; font-weight: 600; color: white; }
-  .highlight-cell { background: rgba(22,163,74,0.15); color: #4ade80 !important; font-weight: 700; }
-  .warning-cell { background: rgba(220,38,38,0.15); color: #fca5a5 !important; }
-
-  /* CALLOUT */
-  .callout {
-    background: rgba(200,32,32,0.06);
-    border-left: 4px solid var(--hz-red);
-    padding: 1.25rem 1.5rem;
-    border-radius: 0 8px 8px 0;
-    margin: 1.5rem 0;
-  }
-  .callout strong { color: var(--hz-red); }
-  .callout p { margin: 0; }
-  .section-accent .callout { background: rgba(200,32,32,0.1); }
-
-  .callout-blue {
-    background: rgba(0,96,176,0.06);
-    border-left: 4px solid var(--hz-blue);
-    padding: 1.25rem 1.5rem;
-    border-radius: 0 8px 8px 0;
-    margin: 1.5rem 0;
-  }
-  .callout-blue strong { color: var(--hz-blue); }
-  .section-accent .callout-blue { background: rgba(0,96,176,0.15); }
-
-  /* PRICING CALCULATOR */
-  .calculator {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 16px;
-    padding: 2rem;
-    margin: 2rem 0;
-    text-align: center;
-  }
-  .calculator label {
-    display: block;
-    font-size: 0.85rem;
-    color: rgba(255,255,255,0.6);
-    margin-bottom: 0.75rem;
-  }
-  .calculator input[type="range"] {
-    width: 100%;
-    max-width: 400px;
-    margin: 0.5rem 0;
-    accent-color: var(--hz-red);
-    cursor: pointer;
-  }
-  .calculator .athlete-count {
-    font-size: 2.5rem;
-    font-weight: 900;
-    color: white;
-    margin: 0.5rem 0;
-  }
-  .calculator .athlete-count small {
-    font-size: 1rem;
-    font-weight: 500;
-    color: rgba(255,255,255,0.5);
-  }
-  .calculator .recommendation {
-    margin-top: 1rem;
-    padding: 1rem 1.5rem;
-    background: rgba(200,32,32,0.15);
-    border-radius: 10px;
-    display: inline-block;
-  }
-  .calculator .recommendation .plan-label {
-    font-size: 0.75rem;
-    color: rgba(255,255,255,0.5);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-  }
-  .calculator .recommendation .plan-result {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: white;
-    margin-top: 0.25rem;
-  }
-  .calculator .recommendation .plan-price {
-    font-size: 0.9rem;
-    color: var(--hz-red-light);
-    font-weight: 600;
-  }
 
   /* FOOTER */
   .footer {
@@ -578,9 +383,7 @@
     .cover h1 { font-size: 2.5rem; }
     .cover img { width: 140px; height: 140px; }
     .section { padding: 3rem 1.25rem; }
-    .section-inner { padding: 0 1.25rem; }
     .logo-grid { grid-template-columns: 1fr; }
-    .pricing-grid { grid-template-columns: repeat(2, 1fr); }
     .nav-inner { padding: 0 1rem; }
   }
 
@@ -604,7 +407,6 @@
     <a href="#colores">Colores</a>
     <a href="#tipografia">Tipografía</a>
     <a href="#voz">Tono de Voz</a>
-    <a href="#pricing">Pricing</a>
     <a href="#aplicaciones">Aplicaciones</a>
   </div>
 </nav>
@@ -828,166 +630,9 @@
   </table>
 </div>
 
-<!-- 06. PRICING -->
-<div class="section section-accent section-full fade-in" id="pricing">
-  <div class="section-inner">
-    <h2><span class="num">06 — Pricing</span>Análisis de Precios</h2>
-    <div class="divider"></div>
-    <p>Existen 3 modelos de precios en diferentes fuentes. Analizamos cuál es el más viable basado en el estudio de mercado.</p>
-  </div>
-
-  <div class="section-wide">
-    <h3 style="color: white; margin-bottom: 1rem;">Comparativa de los 3 modelos</h3>
-    <table class="comparison" style="background: rgba(255,255,255,0.05); border-radius: 12px; overflow: hidden;">
-      <tr>
-        <th>Plan</th>
-        <th>Landing (actual)</th>
-        <th>Código v2</th>
-        <th>Estudio de Mercado</th>
-        <th>Presupuesto SW academia (1-2% ingresos)</th>
-      </tr>
-      <tr>
-        <td>Free</td>
-        <td>—</td>
-        <td>$0 (10 atl)</td>
-        <td>—</td>
-        <td style="font-size: 0.85rem;">—</td>
-      </tr>
-      <tr>
-        <td>Basic / Starter</td>
-        <td>$40.000</td>
-        <td>$49.900</td>
-        <td>$29.900</td>
-        <td style="font-size: 0.85rem;">Pequeña (20-30 atl): $24K-48K</td>
-      </tr>
-      <tr>
-        <td>Pro / Professional</td>
-        <td class="highlight-cell">$78.000</td>
-        <td class="warning-cell">$149.900</td>
-        <td>$79.900</td>
-        <td style="font-size: 0.85rem;">Mediana (50-80 atl): $60K-120K</td>
-      </tr>
-      <tr>
-        <td>Enterprise</td>
-        <td>Custom</td>
-        <td>Custom</td>
-        <td>$199.900</td>
-        <td style="font-size: 0.85rem;">Grande (100+ atl): $150K-300K</td>
-      </tr>
-    </table>
-  </div>
-
-  <div class="section-inner">
-    <div class="callout">
-      <p><strong>Problema clave:</strong> El Pro del código v2 ($149.900) excede por mucho el presupuesto de una academia mediana ($60K-120K). A ese precio, solo las grandes podrían pagarlo — pero ellas necesitan Enterprise. Hay un "agujero" en el pricing del v2.</p>
-    </div>
-
-    <h3 style="color: white; margin-top: 2rem;">Recomendación</h3>
-    <p>Basado en el estudio de mercado, la capacidad de pago real de las academias, y la estrategia de penetración con 1 founder:</p>
-  </div>
-
-  <div style="max-width: 1000px; margin: 2rem auto; padding: 0 2rem;">
-    <div class="pricing-grid">
-      <div class="price-card">
-        <div class="plan-name">Free</div>
-        <div class="price">$0<small>/mes</small></div>
-        <div class="details">10 atletas · 1 trainer<br>100 MB storage</div>
-        <div class="fit fit-good">Gancho de adopción</div>
-      </div>
-      <div class="price-card">
-        <div class="plan-name">Basic</div>
-        <div class="price">$39.900<small>/mes</small></div>
-        <div class="details">50 atletas · 3 trainers<br>1 GB storage</div>
-        <div class="fit fit-good">Dentro del budget ($24K-48K)</div>
-      </div>
-      <div class="price-card recommended">
-        <div class="plan-name">Pro</div>
-        <div class="price">$79.900<small>/mes</small></div>
-        <div class="details">200 atletas · 10 trainers<br>10 GB storage</div>
-        <div class="fit fit-good">Dentro del budget ($60K-120K)</div>
-      </div>
-      <div class="price-card">
-        <div class="plan-name">Enterprise</div>
-        <div class="price">$199.900<small>/mes</small></div>
-        <div class="details">Ilimitado · Custom domain<br>50 GB+ · Alegra · Soporte priority</div>
-        <div class="fit fit-good">Dentro del budget ($150K-300K)</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="section-inner">
-    <!-- PRICING CALCULATOR -->
-    <div class="calculator">
-      <label>¿Cuántos atletas tiene tu academia?</label>
-      <input type="range" id="athleteSlider" min="1" max="300" value="30">
-      <div class="athlete-count"><span id="athleteCount">30</span> <small>atletas</small></div>
-      <div class="recommendation">
-        <div class="plan-label">Plan recomendado</div>
-        <div class="plan-result" id="recommendedPlan">Basic</div>
-        <div class="plan-price" id="recommendedPrice">$39.900/mes</div>
-      </div>
-    </div>
-
-    <h3 style="color: white; margin-top: 1.5rem;">¿Por qué estos precios?</h3>
-    <table class="voice-table">
-      <tr><th>Decisión</th><th>Razón</th></tr>
-      <tr>
-        <td>Free a $0</td>
-        <td>Barrera de entrada cero. El club prueba sin riesgo. Convierte a Basic cuando necesita más de 10 atletas. Esencial para 1 founder sin equipo de ventas.</td>
-      </tr>
-      <tr>
-        <td>Basic a $39.900 (no $49.900)</td>
-        <td>$49.900 excede el presupuesto de una academia pequeña ($24K-48K). $39.900 cabe justo. Psicológicamente "menos de 40 mil" es mejor que "casi 50 mil".</td>
-      </tr>
-      <tr>
-        <td>Pro a $79.900 (no $149.900)</td>
-        <td>$149.900 excede el budget de medianas ($60K-120K). $79.900 cabe cómodo. Coincide con el estudio de mercado. La landing ya cobra ~$78K — validación implícita.</td>
-      </tr>
-      <tr>
-        <td>Enterprise a $199.900 (no Custom)</td>
-        <td>Precio fijo transparente en vez de "contáctanos". Las grandes (budget $150K-300K) pueden decidir sin call de ventas. Custom solo para white-label.</td>
-      </tr>
-    </table>
-
-    <h3 style="color: white; margin-top: 2rem;">Impacto en Unit Economics</h3>
-    <table class="comparison" style="background: rgba(255,255,255,0.05); border-radius: 12px;">
-      <tr>
-        <th>Métrica</th>
-        <th>Antes (estudio mercado)</th>
-        <th>Con precios recomendados</th>
-      </tr>
-      <tr>
-        <td>ARPU blended</td>
-        <td>COP 89.933</td>
-        <td>COP ~73.920*</td>
-      </tr>
-      <tr>
-        <td>Break-even</td>
-        <td>~34 clientes</td>
-        <td>~41 clientes</td>
-      </tr>
-      <tr>
-        <td>Timeline break-even</td>
-        <td>~12-14 meses</td>
-        <td>~14-17 meses</td>
-      </tr>
-      <tr>
-        <td>LTV/CAC</td>
-        <td>221:1</td>
-        <td>~181:1 (sigue excelente)</td>
-      </tr>
-    </table>
-    <p style="font-size: 0.8rem; margin-top: 0.5rem; color: rgba(255,255,255,0.4);">*ARPU con mix: 15% Free ($0) + 40% Basic ($39.9K) + 35% Pro ($79.9K) + 10% Enterprise ($199.9K) = $73.920</p>
-
-    <div class="callout-blue" style="margin-top: 1.5rem;">
-      <p><strong>Trade-off aceptable:</strong> Break-even sube de ~34 a ~41 clientes (+7), pero la tasa de conversión será mayor porque los precios caben en el presupuesto real de las academias. Es mejor convertir 41 clientes a precios viables que perder deals por tener Pro a $149.9K.</p>
-    </div>
-  </div>
-</div>
-
-<!-- 07. APPLICATIONS -->
+<!-- 06. APPLICATIONS -->
 <div class="section fade-in" id="aplicaciones">
-  <h2><span class="num">07 — Aplicaciones</span>Variables CSS & Tailwind</h2>
+  <h2><span class="num">06 — Aplicaciones</span>Variables CSS & Tailwind</h2>
   <div class="divider"></div>
   <p>Para implementar la paleta en la plataforma y landing:</p>
 
@@ -1092,26 +737,6 @@ sans: ['Inter', ...defaultTheme.fontFamily.sans]</pre>
     });
   });
 
-  // === PRICING CALCULATOR ===
-  const slider = document.getElementById('athleteSlider');
-  const countEl = document.getElementById('athleteCount');
-  const planEl = document.getElementById('recommendedPlan');
-  const priceEl = document.getElementById('recommendedPrice');
-
-  const plans = [
-    { max: 10, name: 'Free', price: '$0/mes' },
-    { max: 50, name: 'Basic', price: '$39.900/mes' },
-    { max: 200, name: 'Pro', price: '$79.900/mes' },
-    { max: Infinity, name: 'Enterprise', price: '$199.900/mes' },
-  ];
-
-  slider.addEventListener('input', () => {
-    const val = parseInt(slider.value);
-    countEl.textContent = val;
-    const plan = plans.find(p => val <= p.max);
-    planEl.textContent = plan.name;
-    priceEl.textContent = plan.price;
-  });
 </script>
 
 </body>

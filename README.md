@@ -1,6 +1,6 @@
 # HitZero Brand Guide
 
-Guía de marca interactiva de HitZero. Contiene paleta de colores, tipografía, uso de logo, tono de voz y análisis de pricing.
+Guía de marca oficial de HitZero. Identidad, logo, paleta de colores, tipografía, tono de voz y variables CSS/Tailwind.
 
 ## Stack
 
