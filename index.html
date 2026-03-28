@@ -363,6 +363,28 @@
   .do { color: #16a34a; font-weight: 600; }
   .dont { color: var(--hz-red); font-weight: 600; }
 
+  /* DOWNLOAD BUTTON */
+  .download-btn {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background: rgba(255,255,255,0.15);
+    border: none;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s, background 0.2s;
+  }
+  .logo-box:hover .download-btn { opacity: 1; }
+  .download-btn:hover { background: rgba(255,255,255,0.3); }
+  .download-btn svg { width: 16px; height: 16px; stroke: white; }
+
   /* FOOTER */
   .footer {
     background: var(--hz-black);
@@ -378,6 +400,20 @@
     margin-bottom: 1rem;
     opacity: 0.6;
   }
+  .footer-links {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .footer-links a {
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: rgba(255,255,255,0.7); }
 
   @media (max-width: 640px) {
     .cover h1 { font-size: 2.5rem; }
@@ -453,18 +489,22 @@
   <div class="logo-grid">
     <div class="logo-box dark">
       <img src="https://avatars.githubusercontent.com/u/252136948?s=400&u=1cd20729652a93936385e6544bc3829b6c188515&v=4" alt="Logo on dark">
+      <button class="download-btn" title="Descargar logo" data-filename="hitzero-logo.png"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></button>
       <span class="tag">Fondo oscuro (principal)</span>
     </div>
     <div class="logo-box light">
       <img src="https://avatars.githubusercontent.com/u/252136948?s=400&u=1cd20729652a93936385e6544bc3829b6c188515&v=4" alt="Logo on light">
+      <button class="download-btn" title="Descargar logo" data-filename="hitzero-logo.png"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></button>
       <span class="tag">Fondo claro</span>
     </div>
     <div class="logo-box blue">
       <img src="https://avatars.githubusercontent.com/u/252136948?s=400&u=1cd20729652a93936385e6544bc3829b6c188515&v=4" alt="Logo on blue">
+      <button class="download-btn" title="Descargar logo" data-filename="hitzero-logo.png"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></button>
       <span class="tag">Fondo azul marca</span>
     </div>
     <div class="logo-box red">
       <img src="https://avatars.githubusercontent.com/u/252136948?s=400&u=1cd20729652a93936385e6544bc3829b6c188515&v=4" alt="Logo on red">
+      <button class="download-btn" title="Descargar logo" data-filename="hitzero-logo.png"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></button>
       <span class="tag">Fondo rojo marca</span>
     </div>
   </div>
@@ -673,7 +713,13 @@ sans: ['Inter', ...defaultTheme.fontFamily.sans]</pre>
 <div class="footer">
   <img src="https://avatars.githubusercontent.com/u/252136948?s=400&u=1cd20729652a93936385e6544bc3829b6c188515&v=4" alt="HitZero">
   <p>HitZero Brand Guide v1.0 · Marzo 2026 · El Dezvare</p>
-  <p style="margin-top: 0.25rem;">hitzero.club</p>
+  <div class="footer-links">
+    <a href="https://hitzero.club">hitzero.club</a>
+    <a href="https://hitzero.club/terminos">Términos de Servicio</a>
+    <a href="https://hitzero.club/privacidad">Política de Privacidad</a>
+    <a href="https://hitzero.club/contacto">Contacto</a>
+    <a href="https://github.com/hitzero-club/brand">GitHub</a>
+  </div>
 </div>
 
 <script>
@@ -720,6 +766,28 @@ sans: ['Inter', ...defaultTheme.fontFamily.sans]</pre>
     });
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
+
+  // === DOWNLOAD LOGO ===
+  document.querySelectorAll('.download-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const img = btn.closest('.logo-box').querySelector('img');
+      const filename = btn.dataset.filename || 'hitzero-logo.png';
+      fetch(img.src)
+        .then(r => r.blob())
+        .then(blob => {
+          const a = document.createElement('a');
+          a.href = URL.createObjectURL(blob);
+          a.download = filename;
+          a.click();
+          URL.revokeObjectURL(a.href);
+          toast.textContent = `${filename} descargado`;
+          toast.classList.add('show');
+          clearTimeout(toastTimeout);
+          toastTimeout = setTimeout(() => toast.classList.remove('show'), 1500);
+        });
+    });
+  });
 
   // === COPY COLOR TO CLIPBOARD ===
   const toast = document.getElementById('toast');
