@@ -5,8 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HitZero — Brand Guide</title>
 <meta name="description" content="Guía de marca oficial de HitZero. Colores, tipografía, logo, tono de voz y aplicaciones.">
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/assets/logo.png">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   :root {
@@ -26,7 +25,7 @@
     --hz-white: #FFFFFF;
   }
   body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background: var(--hz-white);
     color: var(--hz-gray-900);
     line-height: 1.6;
@@ -452,7 +451,7 @@
 
 <!-- COVER -->
 <div class="cover">
-  <img src="https://avatars.githubusercontent.com/u/252136948?s=400&u=1cd20729652a93936385e6544bc3829b6c188515&v=4" alt="HitZero Logo">
+  <img src="/assets/logo.png" alt="HitZero Logo">
   <h1>Hit<span>Zero</span></h1>
   <p>Brand Guide</p>
   <div class="version">Marzo 2026 · v1.0 · El Dezvare</div>
@@ -488,22 +487,22 @@
 
   <div class="logo-grid">
     <div class="logo-box dark">
-      <img src="https://avatars.githubusercontent.com/u/252136948?s=400&u=1cd20729652a93936385e6544bc3829b6c188515&v=4" alt="Logo on dark">
+      <img src="/assets/logo.png" alt="Logo on dark">
       <button class="download-btn" title="Descargar logo" data-filename="hitzero-logo.png"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></button>
       <span class="tag">Fondo oscuro (principal)</span>
     </div>
     <div class="logo-box light">
-      <img src="https://avatars.githubusercontent.com/u/252136948?s=400&u=1cd20729652a93936385e6544bc3829b6c188515&v=4" alt="Logo on light">
+      <img src="/assets/logo.png" alt="Logo on light">
       <button class="download-btn" title="Descargar logo" data-filename="hitzero-logo.png"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></button>
       <span class="tag">Fondo claro</span>
     </div>
     <div class="logo-box blue">
-      <img src="https://avatars.githubusercontent.com/u/252136948?s=400&u=1cd20729652a93936385e6544bc3829b6c188515&v=4" alt="Logo on blue">
+      <img src="/assets/logo.png" alt="Logo on blue">
       <button class="download-btn" title="Descargar logo" data-filename="hitzero-logo.png"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></button>
       <span class="tag">Fondo azul marca</span>
     </div>
     <div class="logo-box red">
-      <img src="https://avatars.githubusercontent.com/u/252136948?s=400&u=1cd20729652a93936385e6544bc3829b6c188515&v=4" alt="Logo on red">
+      <img src="/assets/logo.png" alt="Logo on red">
       <button class="download-btn" title="Descargar logo" data-filename="hitzero-logo.png"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></button>
       <span class="tag">Fondo rojo marca</span>
     </div>
@@ -593,8 +592,8 @@
   <h3>Uso de colores</h3>
   <table class="voice-table">
     <tr><th>Color</th><th>Cuándo usarlo</th></tr>
-    <tr><td><span style="color: var(--hz-red);">HZ Red</span></td><td>CTAs principales, alertas, highlights, acentos. El color de "acción".</td></tr>
-    <tr><td><span style="color: var(--hz-blue);">HZ Blue</span></td><td>Links, información, estados activos, backgrounds secundarios. El color de "confianza".</td></tr>
+    <tr><td><span style="color: var(--hz-red);">HZ Red</span></td><td>Identidad: logo, sitio de marca, redes. En la plataforma aparece como color destructivo (eliminar, errores), nunca como CTA principal.</td></tr>
+    <tr><td><span style="color: var(--hz-blue);">HZ Blue</span></td><td>Color primario de la plataforma: botones principales, links, controles activos y anillo de foco. Cada club puede reemplazarlo con su propio color.</td></tr>
     <tr><td><span style="color: var(--hz-black);">HZ Black</span></td><td>Fondos principales, headers, texto primario. El color "base".</td></tr>
     <tr><td><span style="color: var(--hz-gray-500);">Grays</span></td><td>Texto secundario, bordes, fondos sutiles, UI elements.</td></tr>
   </table>
@@ -602,32 +601,32 @@
 
 <!-- 04. TYPOGRAPHY -->
 <div class="section section-dark fade-in" id="tipografia">
-  <h2><span class="num">04 — Tipografía</span>Inter</h2>
+  <h2><span class="num">04 — Tipografía</span>Sans del sistema</h2>
   <div class="divider"></div>
-  <p>Inter es la tipografía principal de HitZero. Diseñada para pantallas, con excelente legibilidad en todos los tamaños. Se usa en la landing page (Astro) y en la plataforma (TanStack Start + Tailwind).</p>
+  <p>La plataforma no carga fuentes web: usa la pila sans del sistema de Tailwind (<code>font-sans</code>), que carga al instante y se ve nativa en cada dispositivo. La jerarquía viene del peso y el tamaño.</p>
 
   <div class="type-sample">
-    <div class="label">Display — Inter 900 / 3rem</div>
+    <div class="label">Display — Sans 900 / 3rem</div>
     <div class="demo" style="font-size: 3rem; font-weight: 900; letter-spacing: -0.02em;">Gestiona tu academia</div>
   </div>
   <div class="type-sample">
-    <div class="label">Heading 1 — Inter 800 / 2rem</div>
-    <div class="demo" style="font-size: 2rem; font-weight: 800;">Seguimiento de progreso</div>
+    <div class="label">Heading 1 — Sans 800 / 1.875rem</div>
+    <div class="demo" style="font-size: 1.875rem; font-weight: 800;">Seguimiento de progreso</div>
   </div>
   <div class="type-sample">
-    <div class="label">Heading 2 — Inter 700 / 1.5rem</div>
+    <div class="label">Heading 2 — Sans 700 / 1.5rem</div>
     <div class="demo" style="font-size: 1.5rem; font-weight: 700;">Cobros automáticos con Wompi</div>
   </div>
   <div class="type-sample">
-    <div class="label">Heading 3 — Inter 600 / 1.25rem</div>
+    <div class="label">Heading 3 — Sans 600 / 1.25rem</div>
     <div class="demo" style="font-size: 1.25rem; font-weight: 600;">Roles y permisos por organización</div>
   </div>
   <div class="type-sample">
-    <div class="label">Body — Inter 400 / 1rem</div>
+    <div class="label">Body — Sans 400 / 1rem</div>
     <div class="demo" style="font-size: 1rem; font-weight: 400;">HitZero es la plataforma que permite a clubes y academias deportivas gestionar atletas, clases, pagos y progreso desde un solo lugar. Sin instalar nada, desde cualquier dispositivo.</div>
   </div>
   <div class="type-sample">
-    <div class="label">Small / Caption — Inter 500 / 0.875rem</div>
+    <div class="label">Small / Caption — Sans 500 / 0.875rem</div>
     <div class="demo" style="font-size: 0.875rem; font-weight: 500; color: var(--hz-gray-500);">Planes desde COP $0/mes · Prueba gratis · Sin tarjeta de crédito</div>
   </div>
 
@@ -691,7 +690,7 @@ hz: {
 }
 
 // fontFamily
-sans: ['Inter', ...defaultTheme.fontFamily.sans]</pre>
+sans: defaultTheme.fontFamily.sans // sin fuentes web</pre>
   </div>
 
   <div class="type-sample">
@@ -707,11 +706,24 @@ sans: ['Inter', ...defaultTheme.fontFamily.sans]</pre>
   --hz-white: #FFFFFF;
 }</pre>
   </div>
+  <div class="type-sample">
+    <div class="label">Tokens de la plataforma (packages/ui/globals.css — fuente de verdad)</div>
+<pre class="demo" style="font-family: 'Courier New', monospace; font-size: 0.85rem; line-height: 1.8; white-space: pre-wrap;">:root {
+  --primary: 207 100% 35%;     /* HZ Blue — CTAs, links, foco */
+  --destructive: 0 72% 45%;    /* HZ Red — eliminar, errores */
+  --ring: 207 100% 35%;
+  --radius: 0.75rem;
+}
+/* Neutros: zinc de shadcn/ui. Modo oscuro en .dark */
+/* Modo oscuro (objetivo): --primary 207 90% 58% y --destructive 0 72% 60%, con texto casi negro encima.
+   Los valores actuales en oscuro quedan en 3.2:1 y 3.4:1 sobre el fondo; los nuevos superan 5:1. */
+/* Branding por club: primary_color (#0060B0) y secondary_color (#C82020) reemplazan --primary/--ring en runtime */</pre>
+  </div>
 </div>
 
 <!-- FOOTER -->
 <div class="footer">
-  <img src="https://avatars.githubusercontent.com/u/252136948?s=400&u=1cd20729652a93936385e6544bc3829b6c188515&v=4" alt="HitZero">
+  <img src="/assets/logo.png" alt="HitZero">
   <p>HitZero Brand Guide v1.0 · Marzo 2026 · El Dezvare</p>
   <div class="footer-links">
     <a href="https://hitzero.club">hitzero.club</a>
