@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HitZero — Brand Guide</title>
 <meta name="description" content="Guía de marca oficial de HitZero. Colores, tipografía, logo, tono de voz y aplicaciones.">
-<link rel="icon" type="image/png" href="/assets/logo.png">
+<link rel="icon" type="image/svg+xml" href="/assets/logo/hitzero-favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/logo/hitzero-favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/logo/hitzero-app-icon-180.png">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   :root {
@@ -105,9 +107,9 @@
     background: radial-gradient(circle at 50% 50%, rgba(200,32,32,0.08) 0%, transparent 60%);
   }
   .cover img {
-    width: 200px;
-    height: 200px;
-    border-radius: 24px;
+    width: 100%;
+    max-width: 420px;
+    height: auto;
     margin-bottom: 2rem;
     position: relative;
     z-index: 1;
@@ -316,10 +318,12 @@
   }
   .logo-box:hover { transform: scale(1.02); }
   .logo-box img {
-    width: 140px;
-    height: 140px;
+    width: 100%;
+    max-width: 220px;
+    height: auto;
     border-radius: 12px;
   }
+  .logo-box img.app-icon { width: 120px; }
   .logo-box .tag {
     position: absolute;
     bottom: 0.75rem;
@@ -352,6 +356,7 @@
     border-bottom: 1px solid var(--hz-gray-300);
     font-size: 0.95rem;
   }
+  .voice-table a { color: var(--hz-blue); }
   .voice-table th {
     font-weight: 700;
     font-size: 0.8rem;
@@ -393,9 +398,8 @@
     font-size: 0.85rem;
   }
   .footer img {
-    width: 60px;
-    height: 60px;
-    border-radius: 12px;
+    width: 140px;
+    height: auto;
     margin-bottom: 1rem;
     opacity: 0.6;
   }
@@ -416,7 +420,7 @@
 
   @media (max-width: 640px) {
     .cover h1 { font-size: 2.5rem; }
-    .cover img { width: 140px; height: 140px; }
+    .cover img { max-width: 280px; }
     .section { padding: 3rem 1.25rem; }
     .logo-grid { grid-template-columns: 1fr; }
     .nav-inner { padding: 0 1rem; }
@@ -451,7 +455,7 @@
 
 <!-- COVER -->
 <div class="cover">
-  <img src="/assets/logo.png" alt="HitZero Logo">
+  <img src="/assets/logo/hitzero-logo-dark.svg" alt="Logo de HitZero">
   <h1>Hit<span>Zero</span></h1>
   <p>Brand Guide</p>
   <div class="version">Marzo 2026 · v1.0 · Cerkya</div>
@@ -483,38 +487,51 @@
 <div class="section section-dark fade-in" id="logo">
   <h2><span class="num">02 — Logo</span>Uso del Logo</h2>
   <div class="divider"></div>
-  <p>El logo de HitZero combina un escudo deportivo con una silueta de atleta (cheerleader), estrellas y los colores rojo/azul/blanco. Transmite energía, deporte y competencia.</p>
+  <p>El logo de HitZero es un monograma HZ: la H y la Z se enfrentan como rivales, separadas por una sola diagonal delgada. La pierna derecha de la H termina en una cuchilla y la esquina cortada de la Z se alza como una punta; ese filo lleva un sutil acento rojo (el "golpe"). El nombre acompaña al monograma en Sora ExtraBold, convertido a trazos. Transmite competencia, precisión y energía deportiva.</p>
 
   <div class="logo-grid">
     <div class="logo-box dark">
-      <img src="/assets/logo.png" alt="Logo on dark">
-      <button class="download-btn" title="Descargar logo" data-filename="hitzero-logo.png"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></button>
-      <span class="tag">Fondo oscuro (principal)</span>
+      <img src="/assets/logo/hitzero-logo-dark.svg" alt="Logo de HitZero en blanco sobre fondo oscuro">
+      <button class="download-btn" title="Descargar logo" data-filename="hitzero-logo-dark.svg"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></button>
+      <span class="tag">Fondo oscuro</span>
     </div>
     <div class="logo-box light">
-      <img src="/assets/logo.png" alt="Logo on light">
-      <button class="download-btn" title="Descargar logo" data-filename="hitzero-logo.png"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></button>
+      <img src="/assets/logo/hitzero-logo.svg" alt="Logo de HitZero en negro sobre fondo claro">
+      <button class="download-btn" title="Descargar logo" data-filename="hitzero-logo.svg"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></button>
       <span class="tag">Fondo claro</span>
     </div>
     <div class="logo-box blue">
-      <img src="/assets/logo.png" alt="Logo on blue">
-      <button class="download-btn" title="Descargar logo" data-filename="hitzero-logo.png"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></button>
+      <img src="/assets/logo/hitzero-logo-dark.svg" alt="Logo de HitZero en blanco sobre fondo azul de marca">
+      <button class="download-btn" title="Descargar logo" data-filename="hitzero-logo-dark.svg"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></button>
       <span class="tag">Fondo azul marca</span>
     </div>
-    <div class="logo-box red">
-      <img src="/assets/logo.png" alt="Logo on red">
-      <button class="download-btn" title="Descargar logo" data-filename="hitzero-logo.png"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></button>
-      <span class="tag">Fondo rojo marca</span>
+    <div class="logo-box dark">
+      <img class="app-icon" src="/assets/logo/hitzero-app-icon-512.png" alt="Ícono de app de HitZero: monograma HZ blanco sobre cuadrado negro">
+      <button class="download-btn" title="Descargar logo" data-filename="hitzero-app-icon-512.png"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></button>
+      <span class="tag">Ícono de app</span>
     </div>
   </div>
+
+  <h3>Variantes</h3>
+  <table class="voice-table">
+    <tr><th style="width:35%">Archivo</th><th>Cuándo usarlo</th></tr>
+    <tr><td><a href="/assets/logo/hitzero-logo.svg">hitzero-logo.svg</a></td><td>Versión clara: sobre fondos claros. También en <a href="/assets/logo/hitzero-logo.png">PNG</a>.</td></tr>
+    <tr><td><a href="/assets/logo/hitzero-logo-dark.svg">hitzero-logo-dark.svg</a></td><td>Versión oscura: sobre fondos oscuros o azul de marca. También en <a href="/assets/logo/hitzero-logo-dark.png">PNG</a>.</td></tr>
+    <tr><td><a href="/assets/logo/hitzero-logo-mono.svg">hitzero-logo-mono.svg</a></td><td>Una tinta: uniformes, bordado, sellos y cualquier uso de un solo color.</td></tr>
+    <tr><td><a href="/assets/logo/hitzero-mark.svg">hitzero-mark.svg</a></td><td>Monograma solo, sobre fondo claro. Variantes <a href="/assets/logo/hitzero-mark-dark.svg">dark</a> y <a href="/assets/logo/hitzero-mark-mono.svg">mono</a>.</td></tr>
+    <tr><td><a href="/assets/logo/hitzero-wordmark.svg">hitzero-wordmark.svg</a></td><td>Solo el nombre (HITZERO .club), cuando el monograma ya aparece cerca.</td></tr>
+    <tr><td><a href="/assets/logo/hitzero-app-icon.svg">hitzero-app-icon.svg</a></td><td>Ícono de app: monograma blanco sobre cuadrado negro a sangre completa (la plataforma aplica su propia máscara de esquinas). PNG en 1024, 512 y 180 px.</td></tr>
+    <tr><td><a href="/assets/logo/hitzero-favicon.svg">hitzero-favicon.svg</a></td><td>Favicon: ficha redondeada de 64px. PNG de 32px para navegadores sin SVG.</td></tr>
+  </table>
 
   <h3>Reglas de uso</h3>
   <table class="voice-table">
     <tr><th style="width:35%">Regla</th><th>Detalle</th></tr>
-    <tr><td>Nombre</td><td><strong>"HitZero"</strong> — capital H, capital Z, junto. Nunca "Hit Zero", "hitzero", "HITZERO", o "hit zero".</td></tr>
-    <tr><td>Espacio mínimo</td><td>Mantener al menos el 25% del ancho del logo como espacio libre alrededor.</td></tr>
-    <tr><td>Tamaño mínimo</td><td>40px de ancho para digital, 15mm para impreso.</td></tr>
-    <tr><td>Fondo preferido</td><td>Oscuro (negro o azul oscuro). El logo fue diseñado para fondos oscuros.</td></tr>
+    <tr><td>Nombre</td><td>En texto corrido siempre <strong>"HitZero"</strong> — capital H, capital Z, junto. Nunca "Hit Zero", "hitzero" o "hit zero". El nombre del logo va en mayúsculas (HITZERO) solo como tratamiento tipográfico del logo; nunca escribas HITZERO en un texto.</td></tr>
+    <tr><td>Espacio mínimo</td><td>Mantener al menos la altura de la H como espacio libre alrededor del logo.</td></tr>
+    <tr><td>Tamaño mínimo</td><td>El logo completo, al menos 120px de ancho en pantalla y 30mm en impreso. Por debajo de eso usa el monograma solo (mínimo 16px; es el favicon).</td></tr>
+    <tr><td>Fondo preferido</td><td>El logo funciona sobre fondos claros y oscuros: usa <code>hitzero-logo.svg</code> sobre claro, <code>hitzero-logo-dark.svg</code> sobre oscuro y la versión mono para una sola tinta.</td></tr>
+    <tr><td>Acento rojo</td><td>El rojo es solo la punta de la Z. No pintes de rojo otras partes ni agrandes el acento. La versión mono no lleva rojo.</td></tr>
     <tr><td>No distorsionar</td><td>No rotar, estirar, recortar ni aplicar efectos al logo.</td></tr>
   </table>
 </div>
@@ -523,7 +540,7 @@
 <div class="section fade-in" id="colores">
   <h2><span class="num">03 — Colores</span>Paleta de Marca</h2>
   <div class="divider"></div>
-  <p>Los colores se extrajeron directamente del logo oficial. El rojo transmite energía y pasión deportiva. El azul transmite confianza y tecnología. El negro es el fondo principal de la marca. <strong>Hacé click en cualquier color para copiar el hex.</strong></p>
+  <p>Los colores provienen del logo original. El rojo transmite energía y pasión deportiva. El azul transmite confianza y tecnología. El negro es el fondo principal de la marca. <strong>Hacé click en cualquier color para copiar el hex.</strong></p>
 
   <h3>Colores primarios</h3>
   <div class="palette">
@@ -723,7 +740,7 @@ sans: defaultTheme.fontFamily.sans // sin fuentes web</pre>
 
 <!-- FOOTER -->
 <div class="footer">
-  <img src="/assets/logo.png" alt="HitZero">
+  <img src="/assets/logo/hitzero-logo-dark.svg" alt="Logo de HitZero">
   <p>HitZero Brand Guide v1.0 · Marzo 2026 · Cerkya</p>
   <div class="footer-links">
     <a href="https://hitzero.club">hitzero.club</a>
